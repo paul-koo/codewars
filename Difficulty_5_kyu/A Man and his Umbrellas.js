@@ -59,4 +59,22 @@ function minUmbrellas(weather) {
       return umbrellaInHome + umbrellaInWork;
 }
 
+function minUmbrellas2(weather) {
+    let umbrellaInHome = 0;
+    let umbrellaInWork = 0;
+    for (let i = 0; i < weather.length; i += 1) {
+        if (weather[i] === 'rainy' || weather[i] === 'thunderstorms') {
+            if (i%2) {
+                if (umbrellaInHome) umbrellaInHome--;
+                umbrellaInWork++;
+            } else {
+                if (umbrellaInWork) umbrellaInWork--;
+                umbrellaInHome++;
+            }
+        }
+    }
+    return umbrellaInHome + umbrellaInWork;
+}
+
 console.log(minUmbrellas(["rainy", "windy", "clear", "clear", "cloudy", "windy", "windy", "rainy", "rainy", "rainy"]));
+console.log(minUmbrellas2(["rainy", "windy", "clear", "clear", "cloudy", "windy", "windy", "rainy", "rainy", "rainy"]));
