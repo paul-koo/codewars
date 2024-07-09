@@ -5,6 +5,7 @@
 // Note: If the number is a multiple of both 3 and 5, only count it once.
 
 function solution(number){
+    if (number < 0) return 0;
     const arr = []
     for (let i=1; i<(number); i++) {
         i%3 === 0 ? arr.push(i) : i%5 === 0 ? arr.push(i) : ''
