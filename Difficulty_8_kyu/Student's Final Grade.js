@@ -23,16 +23,16 @@
 function finalGrade(exam, projects) {
     return exam > 90 || projects > 10
         ? 100
-        : exam > 75 || projects > 4
+        : exam > 75 && projects > 4
         ? 90
-        : exam > 50 || projects > 1
+        : exam > 50 && projects > 1
         ? 75
         : 0;
 }
 
 console.log(finalGrade(100, 12)); // 100
 console.log(finalGrade(85, 5)); // 90
-console.log(finalGrade(1, 9)); // 90
+console.log(finalGrade(1, 9)); // 0
 console.log(finalGrade(0, 2)); // 0
 console.log(finalGrade(31, 2)); // 0
 console.log(finalGrade(20, 2)); // 0
